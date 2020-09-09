@@ -27,7 +27,7 @@ public class SpokenTimeController extends HttpServlet {
         String clockTime = request.getParameter("clockTime");
         String spokenTime = "not proper clock time for translate to spoken version";
 
-        if (clockTime.matches("([0-1]?[0-2]:[0-5]?[0-9])")) {
+        if (clockTime.matches("(1[012]|[1-9]):[0-5][0-9]")) {
             spokenTime = spokenTimeService.convertTimeToSpokenTimeToSpokenDescription(langCode, clockTime);
         }
 
